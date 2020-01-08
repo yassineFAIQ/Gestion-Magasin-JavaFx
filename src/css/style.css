@@ -1,0 +1,65 @@
+.topHBox{
+//#909090
+    -fx-background-color: #0ED0CC;
+    -fx-font-size: 30px;
+    -fx-font-weight: bolder;
+}
+.leftVBox{
+    -fx-background-color: #93E2E9;
+    -fx-padding: 5 5 5 5;
+}
+.leftVBoxPrime{
+    -fx-background-color: #b5e7ff;
+
+}
+.button {
+    -fx-font: 24px "Calibri";
+    -fx-pref-height: 50;
+    -fx-pref-width: 200;
+    -fx-text-fill:white;
+    /*-fx-padding: 5 5 5 5;*/
+    /*-fx-border-insets: 5px;*/
+    -fx-background-insets: 5px;
+    -fx-background-color:#004080;
+}
+.menu {
+    -fx-font: 36px"Calibri";
+    -fx-pref-height: 150;
+    -fx-pref-width: 200;
+    -fx-text-fill:white;
+    /*-fx-padding: 5 5 5 5;*/
+    /*-fx-border-insets: 5px;*/
+    -fx-background-insets: 5px;
+    -fx-background-color:#188290;
+}
+.buttonAj {
+
+    -fx-cursor:pointer;
+    -fx-border:none;
+    -fx-width:100px;
+    -fx-height:100px;
+    -fx-background-color: transparent;;
+    -fx-background-image:url(./photo/panier.png) no-repeat;
+    -fx-background-repeat: no-repeat;
+	-fx-background-position: center center;
+
+    
+}
+
+.labelText{
+    -fx-font-color: BLACK;
+    -fx-font-size: 20px;
+    -fx-font-weight: bolder;
+}
+
+.labelTotal{
+    -fx-font-color: BLACK;
+    -fx-font-size: 30px;
+    //-fx-font-weight: bolder;
+}
+
+.labelTotalT{
+    -fx-font-color: BLACK;
+    -fx-font-size: 30px;
+  -fx-font-weight: bolder;
+}
