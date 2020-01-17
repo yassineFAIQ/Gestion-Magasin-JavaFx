@@ -390,17 +390,26 @@ public class FormProduit extends Application {
             public void handle(ActionEvent event) {
             	Categorie c ;
             	c= comboBoxCategorie.getSelectionModel().getSelectedItem();
-               // System.out.println(c);
-            	if(fieldDesignation.getLength() !=0 && fieldPrixAchat.getLength() !=0 && fieldPrixVente.getLength() !=0 && fieldQte.getLength() !=0) {
-                    Produit Prod = new Produit(fieldDesignation.getText(), Integer.valueOf(fieldQte.getText()),Double.valueOf(fieldPrixAchat.getText()),Double.valueOf(fieldPrixVente.getText()),c);
-                    pDAO.create(Prod);
-                    refreshProductTable();
-                }
-                else{
-                    alert.setTitle("Input Error");
-                    alert.setHeaderText("Veuillez remplir tous les champs");
+               
+            	
+            	try {
+            		if(fieldDesignation.getLength() !=0 && fieldPrixAchat.getLength() !=0 && fieldPrixVente.getLength() !=0 && fieldQte.getLength() !=0) {
+                        Produit Prod = new Produit(fieldDesignation.getText(), Integer.valueOf(fieldQte.getText()),Double.valueOf(fieldPrixAchat.getText()),Double.valueOf(fieldPrixVente.getText()),c);
+                        pDAO.create(Prod);
+                        refreshProductTable();
+                    }
+                    else{
+                        alert.setTitle("Input Error");
+                        alert.setHeaderText("Veuillez remplir tous les champs");
+                        alert.showAndWait();
+                    }
+                    
+                } catch (NumberFormatException e) {
+                	alert.setTitle("Input Error");
+                    alert.setHeaderText("Veuillez saisir que des chiffres !! ");
                     alert.showAndWait();
                 }
+            	
             }
         });
         buttonUpdate.setOnAction(new EventHandler<ActionEvent>(){

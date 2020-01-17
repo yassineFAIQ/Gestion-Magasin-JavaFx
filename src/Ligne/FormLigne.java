@@ -640,7 +640,7 @@ public class FormLigne extends Application {
             
             	String etat = "en cours";
             	
-            	double totalPaye=0,reste =0 ;
+            	double totalPaye=0,reste =0 ,total=0;
             	
             	
             	 for (Ligne ligne : observableLigne) {
@@ -667,6 +667,7 @@ public class FormLigne extends Application {
             		TexfFieldTotalPaye.setText(String.valueOf(total));
                   	TexfFieldReste.setText(String.valueOf(0));
                     observablePaiement.add(new Paiement(total, comboBoxType.getValue(), LocalDateTime.now(),null,etat));
+                    
                
                   
             	}
@@ -797,6 +798,7 @@ public class FormLigne extends Application {
             	Vente v = (new Vente(c, total,LocalDateTime.now(), getLignes(),getPayments()));
             	vDAO.create(v);
             	observableLigne.clear();
+            	observablePaiement.clear();
             	
                 alert = new Alert(AlertType.INFORMATION);
                	alert.setTitle("Succès !");

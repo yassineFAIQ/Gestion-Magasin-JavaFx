@@ -14,9 +14,7 @@ import Compte.Compte;
 
 
 public class Banque implements Serializable {
-    /**
-	 * 
-	 */
+  
 	private static final long serialVersionUID = 1L;
 	private OutputStream outputStream;
     private InputStream inputStream;

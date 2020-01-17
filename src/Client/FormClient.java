@@ -255,16 +255,30 @@ public class FormClient extends Application {
         buttonAdd.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event) {
-                if(fieldNom.getLength() !=0 && fieldAdresse.getLength() !=0 && fieldPrenom.getLength() !=0 && fieldTel.getLength() !=0 && fieldEmail.getLength() !=0 ) {
-                    Client Prod = new Client(fieldPrenom.getText(), fieldNom.getText(),fieldEmail.getText(),fieldAdresse.getText(),Integer.valueOf(fieldTel.getText()));
-                    pDAO.create(Prod);
-                    refreshclientTable();
-                }
-                else{
-                    alert.setTitle("Input Error");
-                    alert.setHeaderText("Veuillez remplir tous les champs");
+            	
+            	
+            	try {
+            		 if(fieldNom.getLength() !=0 && fieldAdresse.getLength() !=0 && fieldPrenom.getLength() !=0 && fieldTel.getLength() !=0 && fieldEmail.getLength() !=0 ) {
+                         Client Prod = new Client(fieldPrenom.getText(), fieldNom.getText(),fieldEmail.getText(),fieldAdresse.getText(),Integer.valueOf(fieldTel.getText()));
+                         pDAO.create(Prod);
+                         refreshclientTable();
+                     }
+                     else{
+                         alert.setTitle("Input Error");
+                         alert.setHeaderText("Veuillez remplir tous les champs");
+                         alert.showAndWait();
+                     }
+                   
+                } catch (NumberFormatException e) {
+                	alert.setTitle("Input Error");
+                    alert.setHeaderText("Veuillez saisir que des chiffres dans le téléphone");
                     alert.showAndWait();
                 }
+            	
+            	
+            	
+            	
+               
             }
         });
         buttonUpdate.setOnAction(new EventHandler<ActionEvent>(){
